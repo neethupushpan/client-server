@@ -14,7 +14,7 @@ class Server
         while(!str.equals("stop"))
 	{  
             str=din.readUTF();  
-    	    System.out.println("Sruthi Says: "+str);  
+    	    System.out.println("neethu Says: "+str);  
     	    str2=br.readLine();  
             dout.writeUTF(str2);  
             dout.flush();  
