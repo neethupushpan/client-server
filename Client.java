@@ -1,69 +1,26 @@
-import java.net.*;
-import java.io.*;
- 
-public class Client
-{
-    // initialize socket and input output streams
-    private Socket socket            = null;
-    private DataInputStream  input   = null;
-    private DataOutputStream out     = null;
- 
-    // constructor to put ip address and port
-    public Client(String address, int port)
-    {
-        // establish a connection
-        try
-        {
-            socket = new Socket(address, port);
-            System.out.println("Connected");
- 
-            // takes input from terminal
-            input  = new DataInputStream(System.in);
- 
-            // sends output to the socket
-            out    = new DataOutputStream(socket.getOutputStream());
-        }
-        catch(UnknownHostException u)
-        {
-            System.out.println(u);
-        }
-        catch(IOException i)
-        {
-            System.out.println(i);
-        }
- 
-        // string to read message from input
-        String line = "";
- 
-        // keep reading until "Over" is input
-        while (!line.equals("Over"))
-        {
-            try
-            {
-                line = input.readLine();
-                out.writeUTF(line);
-            }
-            catch(IOException i)
-            {
-                System.out.println(i);
-            }
-        }
- 
-        // close the connection
-        try
-        {
-            input.close();
-            out.close();
-            socket.close();
-        }
-        catch(IOException i)
-        {
-            System.out.println(i);
-        }
+
+import java.net.*;  
+import java.io.*;  
+class Client
+{  
+    public static void main(String args[])throws Exception
+    {  
+    Socket s=new Socket("localhost",3333);  
+    DataInputStream din=new DataInputStream(s.getInputStream());  
+    DataOutputStream dout=new DataOutputStream(s.getOutputStream());  
+    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));  
+    System.out.println("Type stop To Close the communication ");
+    String str="",str2="";  
+    while(!str.equals("stop"))
+    {  
+	System.out.println("Enter the request");	
+	str=br.readLine();  
+	dout.writeUTF(str);  
+	dout.flush();  
+	str2=din.readUTF();  
+	System.out.println("Sayeed says: "+str2);  
+    }  
+    dout.close();  
+    s.close();  
     }
- 
-    public static void main(String args[])
-    {
-        Client client = new Client("127.0.0.1", 5000);
-    }
-}
+} 
