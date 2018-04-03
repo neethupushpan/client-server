@@ -24,7 +24,49 @@ public class Client
             // sends output to the socket
             out    = new DataOutputStream(socket.getOutputStream());
 
-       }
+       ne = input.readLine();
+                out.writeUTF(line);
+            }
+            catch(IOException i)
+            {
+                System.out.println(i);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+B
+B
+B
+B
+B
+
+A
+A
+A
+A
+A
+A
+A
+A
+B
+B
+B
+B
+B
+B
+B
+B
+B
+ }
 catch(UnkwnHostException u)
         {
             System.out.println(u);
@@ -37,6 +79,4 @@ catch(UnkwnHostException u)
         // string to read message from input
         String line = "";
        // keep reading until "Over" is input
-
-        }
 
