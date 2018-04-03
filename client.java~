@@ -1,5 +1,5 @@
 
-rt java.net.*;
+import java.net.*;
 import java.io.*;
  
 public class Client
@@ -23,6 +23,29 @@ public class Client
  
             // sends output to the socket
             out    = new DataOutputStream(socket.getOutputStream());
+
+
+wnHostException u)
+        {
+            System.out.println(u);
+        }
+        catch(IOException i)
+        {
+            System.out.println(i);
+        }
+ 
+        // string to read message from input
+        String line = "";
+ 
+
+A
+A
+A
+A
+A
+A
+A
+A
 A
 A
 A
@@ -38,14 +61,7 @@ A
 B
 B
 B
-B
-B
-B
-B
-B
-B
-B
-B
-B
+        // keep reading until "Over" is input
+
         }
 
