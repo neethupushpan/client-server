@@ -37,3 +37,26 @@ public class Server
                     System.out.println(line);
 
                 }
+                  catch(IOException i)
+                {
+                    System.out.println(i);
+                }
+            }
+            System.out.println("Closing connection");
+
+            // close connection
+            socket.close();
+            in.close();
+        }
+        catch(IOException i)
+        {
+            System.out.println(i);
+        }
+    }
+
+    public static void main(String args[])
+    {
+        Server server = new Server(5000);
+    }
+
+
