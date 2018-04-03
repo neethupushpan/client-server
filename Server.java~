@@ -22,3 +22,18 @@ public class Server
 
             socket = server.accept();
             System.out.println("Client accepted");
+              // takes input from the client socket
+            in = new DataInputStream(
+                new BufferedInputStream(socket.getInputStream()));
+
+            String line = "";
+
+            // reads message from client until "Over" is sent
+            while (!line.equals("Over"))
+            {
+                try
+                {
+                    line = in.readUTF();
+                    System.out.println(line);
+
+                }
