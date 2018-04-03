@@ -1,4 +1,3 @@
-
 import java.net.*;
 import java.io.*;
  
@@ -23,8 +22,37 @@ public class Client
  
             // sends output to the socket
             out    = new DataOutputStream(socket.getOutputStream());
-
-       ne = input.rnput.close();
+        }
+        catch(UnknownHostException u)
+        {
+            System.out.println(u);
+        }
+        catch(IOException i)
+        {
+            System.out.println(i);
+        }
+ 
+        // string to read message from input
+        String line = "";
+ 
+        // keep reading until "Over" is input
+        while (!line.equals("Over"))
+        {
+            try
+            {
+                line = input.readLine();
+                out.writeUTF(line);
+            }
+            catch(IOException i)
+            {
+                System.out.println(i);
+            }
+        }
+ 
+        // close the connection
+        try
+        {
+            input.close();
             out.close();
             socket.close();
         }
@@ -38,69 +66,4 @@ public class Client
     {
         Client client = new Client("127.0.0.1", 5000);
     }
-
-A
-A
-A
-B
-B
-B
-B
-B
-B
-}eadLine();
-                out.writeUTF(line);
-            }
-            catch(IOException i)
-            {
-                System.out.println(i);
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-B
-B
-B
-B
-B
-B
-B
- }
-catch(UnkwnHostException u)
-        {
-            System.out.println(u);
-        }
-        catch(IOException i)
-        {
-            System.out.println(i);
-        }
- 
-        // string to read message from input
-        String line = "";
-       // keep reading until "Over" is input
-
+}
