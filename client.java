@@ -24,7 +24,31 @@ public class Client
             // sends output to the socket
             out    = new DataOutputStream(socket.getOutputStream());
 
-       ne = input.readLine();
+       ne = input.rnput.close();
+            out.close();
+            socket.close();
+        }
+        catch(IOException i)
+        {
+            System.out.println(i);
+        }
+    }
+ 
+    public static void main(String args[])
+    {
+        Client client = new Client("127.0.0.1", 5000);
+    }
+
+A
+A
+A
+B
+B
+B
+B
+B
+B
+}eadLine();
                 out.writeUTF(line);
             }
             catch(IOException i)
@@ -43,22 +67,22 @@ public class Client
 
 
 
-B
-B
-B
-B
-B
 
-A
-A
-A
-A
-A
-A
-A
-A
-B
-B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 B
 B
 B
