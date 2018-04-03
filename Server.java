@@ -23,15 +23,4 @@ class Server
         s.close();  
         ss.close();  
     }
-<<<<<<< HEAD
-
-    public static void main(String args[])
-    {
-        Server server = new Server(5000);
-    }
-
-}
-=======
-}  
-
->>>>>>> 0e003e3a64d012144b19dd7fbb56feb8c306e395
+} 
